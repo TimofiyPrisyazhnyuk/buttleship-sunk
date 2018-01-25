@@ -1,8 +1,10 @@
 $c: #13660b
+$w: #fefff6
 body
   background: linear-gradient(to top right, #111111, $c)
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   font-size: 3em
+  margin-top: -10px
 div#board
   position: relative
   margin: auto
@@ -26,34 +28,33 @@ div#board
      bottom: 100px
      right: 0
      padding: 15px
-     background: linear-gradient(to left top, #196412, #FFFFFF, #2b542c,#111111)
+     //background: linear-gradient(to left top, #196412, #FFFFFF, #2b542c,#111111)
      background-size: cover
      input:nth-child(1)
-        width: 50px
-        background: #fefff6
-        border-color: #010501
+        width: 60px
+        //margin-left: 20px
+        height: 50px
+        background: $w
         font-size: 30px
+        transition: all 0.5s linear
         &:hover
-          box-shadow: 5px 6px 10px
+          transform: scale(1.2)
      input:nth-child(2)
         width: 70px
-        background: #FFFFFF
         font-size: 32px
-        animation: bom 3s linear infinite
-        border-radius: 8px
+        color: red
+        background: #004937
+        text-shadow: 1px 1px 2px #3d3d3d
+        animation: bom 4s linear infinite
+        border-radius: 6px
         &:hover
-          box-shadow: 5px 6px 10px
-          color: #ff1d2b
+          animation-play-state: paused
 @keyframes bom
-  0%
-    transform: scale(1.2) rotate(5deg)
-  100%
-    transform: scale(0.9) rotate(0deg)
-
+  0%, 100%
+    transform: scale(1.1)
+  50%
+    transform: scale(0.9)
 .hit
   background: url("../img/ship.png") no-repeat center center
 .miss
   background: url("../img/miss.png") no-repeat center center
-.sassmain
-  transition: all 0.2s ease-in-out
-  transform: rotate(5deg)
